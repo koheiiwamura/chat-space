@@ -2,19 +2,19 @@
 
 ## テーブル設計
 
-## *users*
+## ***users***
 ### association 
 has_many :user_groups  
 has_many :groups, through :user_groups  
 has_many :comments  
 
-### *property* 
+### property 
 - name  
 - email  
 - password  
 - password_confirmation
 
-## *user_groups*
+## ***user_groups***
 ### association  
 belongs_to [:user, group]  
 
@@ -23,7 +23,7 @@ belongs_to [:user, group]
 - user_id  
 -  group_id
 
-## *groups*
+## ***groups***
 
 ### association  
 has_many :user_groups  
@@ -33,7 +33,7 @@ has_many :comments
 ### property   
 - name
 
-## *comments*  
+## ***comments***  
 ### association  
 belongs_to [:user, :group]
 
