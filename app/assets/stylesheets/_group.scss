@@ -1,0 +1,151 @@
+html, body, .contents {
+  height: 100%;
+  width:100%;
+}
+
+input, button, textarea, select {
+  appearance: none;
+  border:none;
+}
+
+input::-webkit-input-placeholder {
+  padding-left:10px;
+}
+
+.clearfix:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.sidebar{
+  width:300px;
+  background-color:$mainGrayColor;
+  float:left;
+  color: $mainDarkGrayColor;
+  height:100%;
+  &__top{
+    background-color:#253141;
+    padding:40px 20px;
+    .user-name{
+      color: $mainDarkGrayColor;
+      font-size:16px;
+      font-weight:bold;
+      .icons{
+        float:right;
+      }
+    }
+  }
+  &__content{
+    ul{
+      :hover{
+        background-color: lighten($mainGrayColor, 10%);
+      }
+      li{
+        padding:20px;
+      }
+    }
+  }
+  .group-name{
+    font-size:15px;
+  }
+  .newest-message{
+    font-size:11px;
+  }
+}
+
+.main{
+  float:left;
+  height:100%;
+  width: calc(100% - 300px) ;
+  display:block;
+}
+
+.group-top{
+  border-bottom:1px solid #eee;
+  background-color: $mainDarkGrayColor;
+  padding:0 40px;
+  &__left{
+    float:left;
+    &--group-name{
+      color:#333;
+      font-size:20px;
+      padding:35px 0 10px;
+    }
+    &--member{
+      color:#999;
+      font-size:12px;
+      ul li{
+        float:left;
+        padding:5px 3px;
+      }
+    }
+  }
+  &__right{
+    float:right;
+    color: $mainBlueColor;
+    border:2px solid $mainBlueColor;
+    padding:0 20px;
+    line-height:40px;
+    margin:28px 0;
+  }
+}
+
+.group-content{
+  background-color:#fafafa;
+  padding:26px 40px 0;
+  color:#434a45;
+  height:calc(100% - 220px) ;
+  ul li{
+    padding:20px 0;
+    .message{
+      padding:6px 0 10px;
+      &__username, &__time{
+        float:left;
+      }
+      &__username{
+        font-size:16px;
+        font-weight:bold;
+        padding-right:10px;
+      }
+      &__time{
+        padding-top:3px;
+        font-size:12px;
+        color:#999;
+      }
+      &__content{
+        font-size:14px;
+      }
+    }
+    .message-content{
+      font-size:14px;
+    }
+  }
+}
+
+.group-bottom{
+  padding:20px 40px;
+  background-color:#ddd;
+  form .form-content .message-form{
+    float:left;
+    margin-right:15px;
+    padding-left:15px;
+    height:50px;
+    width:810px;
+  }
+  &__right{
+    float:left;
+    .message-submit{
+      width:100px;
+      background-color: $mainBlueColor;
+      color:#fff;
+      padding:0;
+      height:50px;
+    }
+  }
+}
+.fa-picture-o{
+  position:relative;
+  right:170px;
+  top:15px;
+}
