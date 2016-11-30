@@ -3,7 +3,7 @@
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: #fff;
+    background-color: $mainWhiteColor;
     border: 1px solid #ddd;
     border-radius: 5px;
 
@@ -38,7 +38,7 @@
 
     .btn {
       margin-top: 20px;
-      color: #fff;
+      color: $mainWhiteColor;
       background-color: #ccc;
       font-size: 14px;
     }
@@ -81,7 +81,7 @@
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: #fff;
+    color: $mainWhiteColor;
     background-color: #38aef0;
   }
 
