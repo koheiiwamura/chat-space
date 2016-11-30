@@ -2,10 +2,11 @@
   .sidebar
     .sidebar__top
       .user-name
-        ユーザーネーム
+        = current_user.name
         .icons
           %i.fa.fa-pencil-square-o
-          %i.fa.fa-cog
+          = link_to edit_user_registration_path(current_user) do
+            %i.fa.fa-cog
     .sidebar__content
       %ul
         %li

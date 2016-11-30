@@ -22,13 +22,13 @@ input::-webkit-input-placeholder {
   width:300px;
   background-color:$mainGrayColor;
   float:left;
-  color: $mainDarkGrayColor;
+  color: $mainWhiteColor;
   height:100%;
   &__top{
     background-color:#253141;
     padding:40px 20px;
     .user-name{
-      color: $mainDarkGrayColor;
+      color: $mainWhiteColor;
       font-size:16px;
       font-weight:bold;
       .icons{
@@ -63,7 +63,7 @@ input::-webkit-input-placeholder {
 
 .group-top{
   border-bottom:1px solid #eee;
-  background-color: $mainDarkGrayColor;
+  background-color: $mainWhiteColor;
   padding:0 40px;
   &__left{
     float:left;
@@ -138,7 +138,7 @@ input::-webkit-input-placeholder {
     .message-submit{
       width:100px;
       background-color: $mainBlueColor;
-      color:#fff;
+      color:$mainWhiteColor;
       padding:0;
       height:50px;
     }
@@ -148,4 +148,7 @@ input::-webkit-input-placeholder {
   position:relative;
   right:170px;
   top:15px;
+}
+.contents i{
+  color:$mainWhiteColor;
 }
