@@ -20,7 +20,7 @@ input::-webkit-input-placeholder {
 
 .sidebar{
   width:300px;
-  background-color:#2f3e51;
+  background-color:$mainGrayColor;
   float:left;
   color: $mainDarkGrayColor;
   height:100%;
@@ -39,7 +39,7 @@ input::-webkit-input-placeholder {
   &__content{
     ul{
       :hover{
-        background-color:#435162;
+        background-color: lighten($mainGrayColor, 10%);
       }
       li{
         padding:20px;
@@ -62,18 +62,18 @@ input::-webkit-input-placeholder {
 }
 
 .group-top{
-  border-bottom:1px solid #eeeeee;
+  border-bottom:1px solid #eee;
   background-color: $mainDarkGrayColor;
   padding:0 40px;
   &__left{
     float:left;
     &--group-name{
-      color:#333333;
+      color:#333;
       font-size:20px;
       padding:35px 0 10px;
     }
     &--member{
-      color:#999999;
+      color:#999;
       font-size:12px;
       ul li{
         float:left;
@@ -111,7 +111,7 @@ input::-webkit-input-placeholder {
       &__time{
         padding-top:3px;
         font-size:12px;
-        color:#999999;
+        color:#999;
       }
       &__content{
         font-size:14px;
@@ -125,7 +125,7 @@ input::-webkit-input-placeholder {
 
 .group-bottom{
   padding:20px 40px;
-  background-color:#dddddd;
+  background-color:#ddd;
   form .form-content .message-form{
     float:left;
     margin-right:15px;
