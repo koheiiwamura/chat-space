@@ -8,4 +8,8 @@
     = csrf_meta_tags
     %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", :rel => "stylesheet"}/
   %body
-    = yield
+    - flash.each do |key, value|
+      %div{:class => "alert alert-#{key}"}
+        .container
+          = value
+  = yield
