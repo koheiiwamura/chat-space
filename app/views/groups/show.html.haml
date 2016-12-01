@@ -1,20 +1,18 @@
 .contents.clearfix
-  = render "sidebar"
+  = render partial:'sidebar', locals: {groups: @groups}
   .main
     .group-top.clearfix
       .group-top__left
         .group-top__left--group-name
-          グループネーム
+          = @group.name
         .group-top__left--member
           %ul
             %li
               Members:
             %li
-              メンバー１
-            %li
-              メンバー２
+              user.name
       .group-top__right
-        Edit
+        = link_to "Edit", edit_group_path(@group)
     .group-content
       %ul
         %li

@@ -81,7 +81,7 @@ input::-webkit-input-placeholder {
       }
     }
   }
-  &__right{
+  &__right a{
     float:right;
     color: $mainBlueColor;
     border:2px solid $mainBlueColor;

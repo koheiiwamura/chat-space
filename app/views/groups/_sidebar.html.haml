@@ -9,13 +9,10 @@
           %i.fa.fa-cog
   .sidebar__content
     %ul
-      %li
-        .group-name
-          サンプルグループ
-        .newest-message
-          最新コメント
-      %li
-        .group-name
-          サンプルグループ
-        .newest-message
-          最新コメント
+      - groups.each do |group|
+        = link_to group_path(group) do
+          %li
+            .group-name
+              = group.name
+            .newest-message
+              最新コメント
