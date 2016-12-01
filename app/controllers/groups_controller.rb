@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update]
   before_action :set_all_group, only: [:show, :index]
+  before_action :set_users, only: [:show, :edit]
 
   def index
   end
@@ -20,7 +21,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @users = @group.users
   end
 
   def edit
@@ -43,5 +43,9 @@ class GroupsController < ApplicationController
 
   def set_all_group
     @groups = Group.all
+  end
+
+  def set_users
+    @users = @group.users
   end
 end
