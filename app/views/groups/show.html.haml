@@ -9,8 +9,9 @@
           %ul
             %li
               Members:
-            %li
-              user.name
+            - @users.each do |user|
+              %li
+                = user.name
       .group-top__right
         = link_to "Edit", edit_group_path(@group)
     .group-content
