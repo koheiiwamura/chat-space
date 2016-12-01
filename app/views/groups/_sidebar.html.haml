@@ -9,10 +9,5 @@
           %i.fa.fa-cog
   .sidebar__content
     %ul
-      - groups.each do |group|
-        = link_to group_path(group) do
-          %li
-            .group-name
-              = group.name
-            .newest-message
-              最新コメント
+      = render partial:'group', collection: @groups
+

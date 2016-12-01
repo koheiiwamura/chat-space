@@ -4,7 +4,7 @@
     margin: 60px auto;
     padding: 60px;
     background-color: $mainWhiteColor;
-    border: 1px solid #ddd;
+    border: 1px solid $WhiteGraycolor;
     border-radius: 5px;
 
     .account-page__inner--left, .account-page__inner--right {
@@ -114,7 +114,7 @@
 #error_explanation {
   margin: 20px 0;
   padding: 20px 30px;
-  border: 1px solid #ddd;
+  border: 1px solid $WhiteGraycolor;
   border-radius: 2px;
 
   h2 {
