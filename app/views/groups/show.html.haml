@@ -1,24 +1,5 @@
 .contents.clearfix
-  .sidebar
-    .sidebar__top
-      .user-name
-        = current_user.name
-        .icons
-          %i.fa.fa-pencil-square-o
-          = link_to edit_user_registration_path(current_user) do
-            %i.fa.fa-cog
-    .sidebar__content
-      %ul
-        %li
-          .group-name
-            サンプルグループ
-          .newest-message
-            最新コメント
-        %li
-          .group-name
-            サンプルグループ
-          .newest-message
-            最新コメント
+  = render "sidebar"
   .main
     .group-top.clearfix
       .group-top__left
