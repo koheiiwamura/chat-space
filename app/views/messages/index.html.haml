@@ -1,5 +1,5 @@
 .contents.clearfix
-  = render partial:'sidebar', locals: {groups: @groups}
+  = render partial:'groups/sidebar', locals: {groups: @groups}
   .main
     .group-top.clearfix
       .group-top__left
@@ -33,9 +33,9 @@
           %p.message__content
             悪い天気
     .group-bottom.clearfix
-      %form
-        .form-content
-          %input{type:"text", placeholder:"type a message", class:"message-form"}
-            %i.fa.fa-picture-o
+      = form_for(([@group, @message])) do |f|
+        .form_content
+          = f.text_field :content, placeholder:"type a message", class:"message-form"
+          %i.fa.fa-picture-o
           .group-bottom__right
-            %input{type:"submit", value:"send", class:"message-submit"}
+            = f.submit "send", class:"message-submit"
