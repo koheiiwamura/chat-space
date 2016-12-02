@@ -1,0 +1,41 @@
+.contents.clearfix
+  = render partial:'sidebar', locals: {groups: @groups}
+  .main
+    .group-top.clearfix
+      .group-top__left
+        .group-top__left--group-name
+          = @group.name
+        .group-top__left--member
+          %ul
+            %li
+              Members:
+            - @users.each do |user|
+              %li
+                = user.name
+      .group-top__right
+        = link_to "Edit", edit_group_path(@group)
+    .group-content
+      %ul
+        %li
+          .meassage.clearfix
+            .message__username
+              メンバーネーム
+            .message__time
+              2016/11/16
+          %p.message__content
+            いい天気
+        %li
+          .message.clearfix
+            .message__username
+              メンバーネーム２
+            .message__time
+              2016/11/16
+          %p.message__content
+            悪い天気
+    .group-bottom.clearfix
+      %form
+        .form-content
+          %input{type:"text", placeholder:"type a message", class:"message-form"}
+            %i.fa.fa-picture-o
+          .group-bottom__right
+            %input{type:"submit", value:"send", class:"message-submit"}

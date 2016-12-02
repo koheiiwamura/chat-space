@@ -1,0 +1,12 @@
+.sidebar
+  .sidebar__top
+    .user-name
+      = current_user.name
+      .icons
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o
+        = link_to edit_user_registration_path(current_user) do
+          %i.fa.fa-cog
+  .sidebar__content
+    %ul
+      = render @groups
