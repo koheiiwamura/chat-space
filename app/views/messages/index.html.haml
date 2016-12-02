@@ -16,26 +16,19 @@
         = link_to "Edit", edit_group_path(@group)
     .group-content
       %ul
-        %li
-          .meassage.clearfix
-            .message__username
-              メンバーネーム
-            .message__time
-              2016/11/16
-          %p.message__content
-            いい天気
-        %li
-          .message.clearfix
-            .message__username
-              メンバーネーム２
-            .message__time
-              2016/11/16
-          %p.message__content
-            悪い天気
+        - @messages.each do |message|
+          %li
+            .meassage.clearfix
+              .message__username
+                = message.user.name
+              .message__time
+                = message.created_at
+            %p.message__content
+              = message.content
     .group-bottom.clearfix
-      = form_for(([@group, @message])) do |f|
-        .form_content
-          = f.text_field :content, placeholder:"type a message", class:"message-form"
-          %i.fa.fa-picture-o
+      = form_for([@group, @message]) do |f|
+        .form-content
+          = f.text_field :content, placeholder:"type a message", class: "message-form" do
+            %i.fa.fa-picture-o
           .group-bottom__right
-            = f.submit "send", class:"message-submit"
+            = f.submit "send", class: "message-submit"
