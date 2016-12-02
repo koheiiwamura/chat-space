@@ -3,4 +3,4 @@
     .group-name
       = group.name
     .newest-message
-      = group.messages.first.present? ? group.messages.first.content : "まだメッセージはありません"
+      = first_message(group).present? ? first_message(group).content : "まだメッセージはありません"

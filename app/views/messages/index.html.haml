@@ -9,26 +9,16 @@
           %ul
             %li
               Members:
-            - @users.each do |user|
-              %li
-                = user.name
+            = render @users
       .group-top__right
         = link_to "Edit", edit_group_path(@group)
     .group-content
       %ul
-        - @messages.each do |message|
-          %li
-            .meassage.clearfix
-              .message__username
-                = message.user.name
-              .message__time
-                = message.created_at
-            %p.message__content
-              = message.content
+        = render @messages
     .group-bottom.clearfix
       = form_for([@group, @message]) do |f|
         .form-content
-          = f.text_field :content, placeholder:"type a message", class: "message-form" do
+          = f.text_field :content, placeholder: "type a message", class: "message-form" do
             %i.fa.fa-picture-o
           .group-bottom__right
             = f.submit "send", class: "message-submit"
