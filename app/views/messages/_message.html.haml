@@ -1,0 +1,8 @@
+%li
+  .meassage.clearfix
+    .message__username
+      = message.user.name
+    .message__time
+      = message.created_at.to_s(:datetime)
+  %p.message__content
+    = message.content

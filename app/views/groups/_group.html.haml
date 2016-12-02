@@ -1,6 +1,6 @@
-= link_to group_path(group) do
+= link_to group_messages_path(group) do
   %li
     .group-name
       = group.name
     .newest-message
-      最新コメント
+      = first_message(group).present? ? first_message(group).content : "まだメッセージはありません"

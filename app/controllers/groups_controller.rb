@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update]
-  before_action :set_all_group, only: [:show, :index]
-  before_action :set_users, only: [:show, :edit]
+  before_action :set_group, only: [:edit, :update]
+  before_action :set_all_group, only: [:index]
+  before_action :set_users, only: [:edit]
 
   def index
   end
@@ -18,9 +18,6 @@ class GroupsController < ApplicationController
       flash[:alert] = "グループを作成できませんでした"
       render :new
     end
-  end
-
-  def show
   end
 
   def edit

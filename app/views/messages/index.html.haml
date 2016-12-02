@@ -1,0 +1,24 @@
+.contents.clearfix
+  = render partial:'groups/sidebar', locals: {groups: @groups}
+  .main
+    .group-top.clearfix
+      .group-top__left
+        .group-top__left--group-name
+          = @group.name
+        .group-top__left--member
+          %ul
+            %li
+              Members:
+            = render @users
+      .group-top__right
+        = link_to "Edit", edit_group_path(@group)
+    .group-content
+      %ul
+        = render @messages
+    .group-bottom.clearfix
+      = form_for([@group, @message]) do |f|
+        .form-content
+          = f.text_field :content, placeholder: "type a message", class: "message-form" do
+            %i.fa.fa-picture-o
+          .group-bottom__right
+            = f.submit "send", class: "message-submit"
