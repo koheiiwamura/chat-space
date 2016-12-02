@@ -3,4 +3,4 @@
     .group-name
       = group.name
     .newest-message
-      最新コメント
+      = group.messages.first.present? ? group.messages.first.content : "まだメッセージはありません"
