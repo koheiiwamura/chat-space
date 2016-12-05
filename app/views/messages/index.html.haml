@@ -13,12 +13,12 @@
       .group-top__right
         = link_to "Edit", edit_group_path(@group)
     .group-content
-      %ul
+      %ul.messages
         = render @messages
     .group-bottom.clearfix
-      = form_for([@group, @message]) do |f|
+      = form_for([@group, @message],html: { class: 'js-message-form' }) do |f|
         .form-content
-          = f.text_field :content, placeholder: "type a message", class: "message-form" do
+          = f.text_field :content, placeholder: "type a message", class: "js-message-text" do
             %i.fa.fa-picture-o
           .group-bottom__right
-            = f.submit "send", class: "message-submit"
+            = f.submit "send", class: "js-message-submit"
