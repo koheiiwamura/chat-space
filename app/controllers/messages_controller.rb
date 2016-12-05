@@ -1,10 +1,13 @@
 class MessagesController < ApplicationController
   def create
-    @message = current_user.messages.new(message_params)
-    if @message.save
-      redirect_to group_messages_path(@message.group), notice: "メッセージを投稿できました"
+    message = current_user.messages.new(message_params)
+    if message.save
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(message.group) }
+        format.json { render json: message.json_message}
+      end
     else
-      redirect_to group_messages_path(@message.group), alert: "メッセージを投稿できませんでした"
+      redirect_to group_messages_path(message.group.id), alert: "メッセージを投稿できませんでした"
     end
   end
 
@@ -12,7 +15,7 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @groups = current_user.groups
     @message = Message.new
-    @messages = Message.where(group_id: @group.id).order("created_at DESC")
+    @messages = @group.messages
     @users = @group.users
   end
 

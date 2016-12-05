@@ -2,6 +2,9 @@
   text-align:center;
   line-height:30px;
   color:$mainWhiteColor;
+  width:100%;
+  position:fixed;
+  top:0;
 }
 .alert-notice {
   background-color:$mainBlueColor;

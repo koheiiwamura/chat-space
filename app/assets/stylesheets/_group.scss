@@ -92,6 +92,7 @@ input::-webkit-input-placeholder {
 }
 
 .group-content{
+  overflow: auto;
   background-color:#fafafa;
   padding:26px 40px 0;
   color:#434a45;
@@ -126,7 +127,7 @@ input::-webkit-input-placeholder {
 .group-bottom{
   padding:20px 40px;
   background-color:$WhiteGraycolor;
-  form .form-content .message-form{
+  form .form-content .js-message-text{
     float:left;
     margin-right:15px;
     padding-left:15px;
@@ -135,7 +136,7 @@ input::-webkit-input-placeholder {
   }
   &__right{
     float:left;
-    .message-submit{
+    .js-message-submit{
       width:100px;
       background-color: $mainBlueColor;
       color:$mainWhiteColor;
