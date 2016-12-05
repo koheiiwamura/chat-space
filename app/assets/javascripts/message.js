@@ -32,7 +32,7 @@ $(function() {
     e.preventDefault();
     var textField = $('.js-message-text');
     var message = textField.val();
-    var submitButton = $(".js-message-submit")
+    var submitButton = $(".js-message-submit");
     var $form = $(this).get(0);
     var fd = new FormData($form);
     $.ajax({
@@ -46,10 +46,11 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       var flash = buildFLASH();
-      $('.messages').prepend(html);
+      $('.messages').append(html);
       $("html").prepend(flash);
       textField.val('');
       submitButton.prop('disabled', false);
+      $(".group-content").animate({ scrollTop: $('.messages').height() }, 300);
     })
     .fail(function() {
       alert('送信できませんでした');
