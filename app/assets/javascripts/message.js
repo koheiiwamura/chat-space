@@ -17,6 +17,16 @@ $(function() {
       '</li>');
     return html;
   };
+  function buildFLASH() {
+    var flashHtml = $(
+    '<div class="alert alert-notice">' +
+    '<div class="container">' +
+     '投稿しました' +
+      '</div>' +
+      '</div>'
+      );
+    return flashHtml;
+  };
 // メッセージ機能のAjax
   $('.js-message-form').on('submit', function(e) {
     e.preventDefault();
@@ -35,7 +45,9 @@ $(function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
+      var flash = buildFLASH();
       $('.messages').prepend(html);
+      $("html").prepend(flash);
       textField.val('');
       submitButton.prop('disabled', false);
     })
