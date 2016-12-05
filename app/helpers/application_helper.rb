@@ -1,5 +1,5 @@
 module ApplicationHelper
   def first_message(group)
-    group.messages.first
+    group.messages.order("created_at DESC").first
   end
 end
