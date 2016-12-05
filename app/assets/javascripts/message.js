@@ -53,7 +53,7 @@ $(function() {
       var html = buildHTML(data);
       var flash = buildFLASH();
       $('.messages').append(html);
-      $("html").prepend(flash);
+      $(".js-flash-message").html(flash);
       textField.val('');
       submitButton.prop('disabled', false);
       scrollToBottom();
