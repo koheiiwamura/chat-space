@@ -1,5 +1,10 @@
 // メッセージのAjax機能時のHTML設定
 $(function() {
+
+  function scrollToBottom() {
+  $(".group-content").animate({ scrollTop: $('.messages').height() }, 300);
+  };
+
   function buildHTML(message) {
     var html = $(
       '<li>'+
@@ -17,6 +22,7 @@ $(function() {
       '</li>');
     return html;
   };
+
   function buildFLASH() {
     var flashHtml = $(
     '<div class="alert alert-notice">' +
@@ -50,7 +56,7 @@ $(function() {
       $("html").prepend(flash);
       textField.val('');
       submitButton.prop('disabled', false);
-      $(".group-content").animate({ scrollTop: $('.messages').height() }, 300);
+      scrollToBottom();
     })
     .fail(function() {
       alert('送信できませんでした');
