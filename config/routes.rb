@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :groups, shallow: true do
     resources :messages, only: [:create, :index]
   end
+  resources :users, only: :index
 end
