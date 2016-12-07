@@ -439,6 +439,24 @@ $textarea_height: 50px;
     &--right {
       float: right;
       width: 70%;
+      .list_user{
+        line-height:50px;
+        width:500px;
+        border-bottom:1px solid $WhiteGraycolor;
+        padding-left:10px;
+        .list_user--name{
+          float:left;
+        }
+        .list_user--button a{
+          float:right;
+          width:100px;
+          text-align:center;
+          color:$mainBlueColor;
+        }
+        .delete span{
+          color:$mainRedColor;
+        }
+      }
     }
   }
 
