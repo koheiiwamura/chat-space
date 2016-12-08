@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.0'
 #funcion
 gem 'devise'
 gem 'pry-rails'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug'
