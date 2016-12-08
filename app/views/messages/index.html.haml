@@ -20,7 +20,7 @@
         .form-content
           = f.text_field :content, placeholder: 'type a message', class: 'js-message-text'
         .group-bottom__right
-          =f.label :image do
+          = f.label :image do
             %i.fa.fa-picture-o
             = f.file_field :image, class: 'input-image'
           = f.submit 'send', class: 'js-message-submit'
