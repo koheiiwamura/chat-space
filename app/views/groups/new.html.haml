@@ -23,9 +23,9 @@
           .list_user--name
             = current_user.name
           .list_user--button
-            %a{href:"#" }
+            %a{ href: '#' }
         #chat-group-users
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        = f.submit "Save", class:"chat-group-form__action-btn"
+        = f.submit 'Save', class: 'chat-group-form__action-btn'

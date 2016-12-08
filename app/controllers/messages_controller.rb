@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
         format.json { render json: message.json_message}
       end
     else
-      redirect_to group_messages_path(message.group.id), alert: "メッセージを投稿できませんでした"
+      redirect_to group_messages_path(message.group.id), alert: 'メッセージを投稿できませんでした'
     end
   end
 

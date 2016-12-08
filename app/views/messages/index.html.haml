@@ -1,5 +1,5 @@
 .contents.clearfix
-  = render partial:'groups/sidebar', locals: {groups: @groups}
+  = render partial:'groups/sidebar', locals: { groups: @groups }
   .main
     .group-top.clearfix
       .group-top__left
@@ -11,14 +11,14 @@
               Members:
             = render @users
       .group-top__right
-        = link_to "Edit", edit_group_path(@group)
+        = link_to 'Edit', edit_group_path(@group)
     .group-content
       %ul.messages
         = render @messages
     .group-bottom.clearfix
       = form_for([@group, @message],html: { class: 'js-message-form' }) do |f|
         .form-content
-          = f.text_field :content, placeholder: "type a message", class: "js-message-text", required: "true" do
+          = f.text_field :content, placeholder: 'type a message', class: 'js-message-text', required: 'true' do
             %i.fa.fa-picture-o
           .group-bottom__right
-            = f.submit "send", class: "js-message-submit"
+            = f.submit 'send', class: 'js-message-submit'

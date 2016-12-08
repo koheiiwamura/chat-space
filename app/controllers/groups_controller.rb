@@ -14,9 +14,9 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.users << current_user
     if @group.save
-      redirect_to root_path, notice:"新しいグループを作成しました"
+      redirect_to root_path, notice:'新しいグループを作成しました'
     else
-      flash[:alert] = "グループを作成できませんでした"
+      flash[:alert] = 'グループを作成できませんでした'
       render :new
     end
   end
@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
 
   def update
     @group.update(group_params)
-    redirect_to root_path, notice:"グループ情報を更新しました"
+    redirect_to root_path, notice:'グループ情報を更新しました'
   end
 
   private
