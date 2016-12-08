@@ -11,3 +11,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore upload images.
+/public
+# Ignore .env
+/.env

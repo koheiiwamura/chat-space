@@ -19,6 +19,9 @@ gem 'jbuilder', '~> 2.0'
 #funcion
 gem 'devise'
 gem 'pry-rails'
+gem 'carrierwave'
+gem 'fog'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'

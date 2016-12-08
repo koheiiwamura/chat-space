@@ -6,3 +6,5 @@
       = message.created_at.to_s(:datetime)
   %p.message__content
     = message.content
+  .message__image
+    = image_tag(message.image, class: 'message-image')
