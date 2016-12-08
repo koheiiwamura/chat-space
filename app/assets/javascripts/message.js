@@ -7,26 +7,25 @@ $(function() {
 
   function buildHTML(message) {
     if (message.image){
-      var image_place = '<div class="message__image">' +
-      '<img src="' +
+      var image_place = '<div class= "message__image">' +
+      '<img src= "' +
       message.image +
-      '", class="message-image">' +
+      '", class= "message-image">' +
       '</div>';
-      console.log("aaa");
     } else{
       var image_place = '';
     };
     var html = (
       '<li>'+
-      '<div class="meassage clearfix">' +
-      '<div class="message__username">' +
+      '<div class= "meassage clearfix">' +
+      '<div class= "message__username">' +
       message.user_name +
       '</div>' +
-      '<div class="message__time">' +
+      '<div class= "message__time">' +
       message.created_at +
       '</div>' +
       '</div>'+
-      '<p class="message__content">' +
+      '<p class= "message__content">' +
       message.content +
       '</p>' +
       image_place +
@@ -36,8 +35,8 @@ $(function() {
 
   function buildFLASH() {
     var flashHtml = $(
-    '<div class="alert alert-notice">' +
-    '<div class="container">' +
+    '<div class= "alert alert-notice">' +
+    '<div class= "container">' +
      '投稿しました' +
       '</div>' +
       '</div>'
