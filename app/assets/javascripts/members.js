@@ -46,7 +46,7 @@ $(function(){
       dataType: 'json'
     })
     .done(function(data) {
-      var html = ''
+      var html = '';
       $.each(data,function(num, user){
         html += removeUserHTML(user);
         $('#user-search-result').html(html);
@@ -66,6 +66,6 @@ $(function(){
   // ユーザーを削除する
   $(document).on('click', '.delete', function(e){
     e.preventDefault();
-    $(this).parents(".list_user").hide();
+    $(this).parents(".list_user").remove();
   });
 });
