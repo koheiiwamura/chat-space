@@ -76,4 +76,8 @@ $(function() {
   $(document).on('change','input[class="input-image"]',function(){
     $('.js-message-submit').trigger("click");
   });
+  // 10秒毎自動更新機能
+  if(location.href.match(/messages/)) {
+     setInterval("location.reload()",10000);
+  };
 });
