@@ -44,6 +44,6 @@ class GroupsController < ApplicationController
   end
 
   def set_users
-    @users = @group.users.where.not(id:current_user.id)
+    @users = @group.users.not_current_user(current_user)
   end
 end
