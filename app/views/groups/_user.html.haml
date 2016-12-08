@@ -1,0 +1,7 @@
+.list_user.clearfix
+  .list_user--name
+    = user.name
+  .list_user--button
+    %a.delete{ href: '#' }
+      %span 削除
+  %input{ type: 'hidden', name: 'group[user_ids][]', value: user.id }

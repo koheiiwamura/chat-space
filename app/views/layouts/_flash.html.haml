@@ -1,5 +1,5 @@
 .js-flash-message
   - flash.each do |key, value|
-    %div{:class => "alert alert-#{key}"}
+    %div{ class: 'alert alert-#{key}'}
       .container
         = value

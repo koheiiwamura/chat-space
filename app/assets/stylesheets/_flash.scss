@@ -1,14 +1,14 @@
 .alert-notice, .alert-alert{
-  text-align:center;
-  line-height:30px;
-  color:$mainWhiteColor;
-  width:100%;
-  position:fixed;
-  top:0;
+  text-align: center;
+  line-height: 30px;
+  color: $mainWhiteColor;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 .alert-notice {
-  background-color:$mainBlueColor;
+  background-color: $mainBlueColor;
 }
 .alert-alert{
-  background-color:#FF6347;
+  background-color: #FF6347;
 }
