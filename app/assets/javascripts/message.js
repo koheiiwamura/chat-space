@@ -2,11 +2,21 @@
 $(function() {
 
   function scrollToBottom() {
-  $(".group-content").animate({ scrollTop: $('.messages').height() }, 300);
+  $(".group-content").animate({ scrollTop: $('.messages').height() }, -300);
   };
 
   function buildHTML(message) {
-    var html = $(
+    if (message.image){
+      var image_place = '<div class="message__image">' +
+      '<img src="' +
+      message.image +
+      '", class="message-image">' +
+      '</div>';
+      console.log("aaa");
+    } else{
+      var image_place = '';
+    };
+    var html = (
       '<li>'+
       '<div class="meassage clearfix">' +
       '<div class="message__username">' +
@@ -19,6 +29,7 @@ $(function() {
       '<p class="message__content">' +
       message.content +
       '</p>' +
+      image_place +
       '</li>');
     return html;
   };
@@ -57,9 +68,13 @@ $(function() {
       textField.val('');
       submitButton.prop('disabled', false);
       scrollToBottom();
+      $('input[class="input-image"]').val('');
     })
     .fail(function() {
       alert('送信できませんでした');
     });
+  });
+  $(document).on('change','input[class="input-image"]',function(){
+    $('.js-message-submit').trigger("click");
   });
 });
