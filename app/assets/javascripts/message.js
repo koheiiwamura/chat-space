@@ -76,4 +76,17 @@ $(function() {
   $(document).on('change','input[class="input-image"]',function(){
     $('.js-message-submit').trigger("click");
   });
+  // 10秒毎自動更新機能
+  if(location.href.match(/messages/)) {
+     setInterval(function() {
+      $.get(location.href + ".json", function(data) {
+        $('.messages').empty();
+        $.each(data,function(num, message){
+          var html = buildHTML(message);
+          $('.messages').append(html);
+        });
+      });
+    },5000);
+  };
 });
+

@@ -17,6 +17,15 @@ class MessagesController < ApplicationController
     @message = Message.new
     @messages = @group.messages
     @users = @group.users
+    respond_to do |format|
+      format.html { render :index }
+      format.json {
+        messages = @messages.includes(:user).map do |message|
+          message.json_message
+        end
+        render json: messages
+      }
+    end
   end
 
 
