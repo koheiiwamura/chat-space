@@ -78,6 +78,15 @@ $(function() {
   });
   // 10秒毎自動更新機能
   if(location.href.match(/messages/)) {
-     setInterval("location.reload()",10000);
+     setInterval(function() {
+      $.get(location.href + ".json", function(data) {
+        $('.messages').empty();
+        $.each(data,function(num, message){
+          var html = buildHTML(message);
+          $('.messages').append(html);
+        });
+      });
+    },5000);
   };
 });
+
